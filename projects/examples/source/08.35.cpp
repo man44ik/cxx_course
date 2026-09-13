@@ -27,11 +27,11 @@ void test(boost::system::error_code const &)
 
 int main()
 {
-    boost::asio::io_service service;
+    boost::asio::io_context service;
 
 //  --------------------------------------------------------------------------
 
-    boost::asio::deadline_timer timer(service, boost::posix_time::seconds(5));
+    boost::asio::steady_timer timer(service, std::chrono::seconds(5));
 
 //  --------------------------------------------------------------------------
 

@@ -18,15 +18,15 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <boost/process.hpp>
+#include <boost/process/v1.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////
 
 int main()
 {
-	boost::process::child process_1("14.54", boost::process::args({ "aaaaa" }));
+	boost::process::v1::child process_1("14.54", boost::process::v1::args({ "aaaaa" }));
 
-    boost::process::child process_2("14.54", boost::process::args({ "bbbbb" }));
+    boost::process::v1::child process_2("14.54", boost::process::v1::args({ "bbbbb" }));
 
 //  ----------------------------------------------------------------------------
 
