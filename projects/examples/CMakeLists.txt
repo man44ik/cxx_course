@@ -593,7 +593,7 @@ target_compile_options     (14.37 PRIVATE -Wall -Wextra -Wpedantic -O0)
 
 target_link_libraries      (14.37 PRIVATE TBB::tbb)
 
-target_link_libraries      (14.37 PRIVATE /usr/lib/gcc/x86_64-linux-gnu/13/libatomic.a)
+target_link_libraries      (14.37 PRIVATE /usr/lib/gcc/x86_64-linux-gnu/16/libatomic.a)
 
 ################################################################################################
 
@@ -688,6 +688,6 @@ target_link_libraries      (14.38 PRIVATE benchmark::benchmark)
 
 target_link_libraries      (14.38 PRIVATE TBB::tbb)
 
-target_link_libraries      (14.38 PRIVATE /usr/lib/gcc/x86_64-linux-gnu/13/libatomic.a)
+target_link_libraries      (14.38 PRIVATE /usr/lib/gcc/x86_64-linux-gnu/16/libatomic.a)
 
 ################################################################################################

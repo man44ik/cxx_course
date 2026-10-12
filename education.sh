@@ -18,13 +18,15 @@
 #
 # sudo apt install gdb valgrind kcachegrind
 #
-# sudo apt install coreutils linux-tools-common linux-tools-$(uname --machine)
+# sudo apt install coreutils linux-tools-common linux-tools-$(uname -r)
 #
 # sudo apt install util-linux procps locales htop
 #
 # sudo apt install pciutils iputils-ping traceroute iproute2 gawk nmap curl lsof tcpdump telnet
 #
-# sudo apt install python3 python3-dev python3-matplotlib libicu-dev libtbb-devs
+# sudo apt install python3 python3-matplotlib
+#
+# sudo apt install python3-dev libicu-dev nlohmann-json3-dev libtbb-dev
 
 #################################################################################################
 
@@ -60,7 +62,7 @@
 #
 # mkdir -p output && cd "$_"
 #
-# cmake .. && cmake --build . --config Release
+# cmake -DCMAKE_BUILD_TYPE=Release .. && cmake --build . -j$(nproc)
 #
 # sudo cmake --install .
 
@@ -72,7 +74,7 @@
 #
 # mkdir -p output && cd "$_"
 #
-# cmake .. && cmake --build . --config Release
+# cmake -DCMAKE_BUILD_TYPE=Release .. && cmake --build . -j$(nproc)
 #
 # sudo cmake --install .
 
@@ -86,19 +88,7 @@
 #
 # cmake -DBENCHMARK_DOWNLOAD_DEPENDENCIES=on -DCMAKE_BUILD_TYPE=Release ..
 #
-# cmake --build . --config Release
-#
-# sudo cmake --install .
-
-#################################################################################################
-
-# git clone https://github.com/nlohmann/json
-#
-# cd json
-#
-# mkdir -p output && cd "$_"
-#
-# cmake .. && cmake --build . --config Release
+# cmake --build . -j$(nproc)
 #
 # sudo cmake --install .
 
@@ -110,7 +100,7 @@
 #
 # mkdir -p output && cd "$_"
 #
-# cmake .. && cmake --build . --config Release
+# cmake -DCMAKE_BUILD_TYPE=Release .. && cmake --build . -j$(nproc)
 #
 # sudo cmake --install .
 
@@ -124,9 +114,11 @@
 #
 # sudo apt-get install zlib1g-dev
 #
-# cmake .. -DZIPPER_SHARED_LIB=ON -DZIPPER_BUILD_DEMOS=ON -DZIPPER_BUILD_TESTS=ON
+# cmake -DZIPPER_SHARED_LIB=ON -DZIPPER_BUILD_DEMOS=ON -DZIPPER_BUILD_TESTS=ON \
 #
-# cmake --build . --config Release
+#       -DCMAKE_BUILD_TYPE=Release ..
+#
+# cmake --build . -j$(nproc)
 #
 # sudo cmake --install .
 
@@ -144,7 +136,7 @@
 #
 # mkdir -p output && cd "$_"
 #
-# cmake .. && cmake --build . --config Release
+# cmake -DCMAKE_BUILD_TYPE=Release .. && cmake --build . -j$(nproc)
 #
 # sudo cmake --install .
 
@@ -154,9 +146,9 @@
 #
 # cd botan
 #
-# ./configure.py
+# ./configure.py --without-include-namespace
 #
-# sudo make install
+# sudo make -j$(nproc) install
 
 #################################################################################################
 
@@ -168,7 +160,7 @@ cd projects/library_v1
 
 mkdir -p output && cd "$_"
 
-cmake .. && cmake --build .
+cmake .. && cmake --build . -j$(nproc)
 
 cp libstatic.a ../../../libraries && cd ../../../
 
@@ -178,7 +170,7 @@ cd projects/library_v2
 
 mkdir -p output && cd "$_"
 
-cmake .. && cmake --build .
+cmake .. && cmake --build . -j$(nproc)
 
 cp libshared.so ../../../libraries && cd ../../../
 
@@ -188,7 +180,7 @@ cd projects/examples
 
 mkdir -p output && cd "$_"
 
-cmake .. && cmake --build .
+cmake .. && cmake --build . -j$(nproc)
 
 #################################################################################################
 
