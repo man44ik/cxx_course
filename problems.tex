@@ -307,7 +307,7 @@
 
 
 
-\newpage\thispagestyle{empty}\pdfpageheight = 26.90in\enlargethispage{100in}
+\newpage\thispagestyle{empty}\pdfpageheight = 26.50in\enlargethispage{100in}
 
 \section{03. Object Oriented Programming}
 
@@ -345,9 +345,7 @@
 
 \bigskip
 
-Реализуйте систему внешнего тестирования приватных функций-членов некоторого класса. Реализуйте класс \lstinline{Entity}. Реализуйте в классе \lstinline{Entity} приватные функции-члены \lstinline{test_v1} и \lstinline{test_v2}, которые необходимо протестировать. Вспомните о первом принципе SOLID - принципе единственности ответственности. Реализуйте 
-
-дружественные для класса \lstinline{Entity} классы \lstinline{Tester_v1}\,и\,\lstinline{Tester_v2}\,для\,представления\,тестировщиков\,функций-членов \lstinline{test_v1} и \lstinline{test_v2} класса \lstinline{Entity} соответственно, чтобы получить прямой доступ к приватной секции класса \lstinline{Entity} и избежать использования публичного интерфейса класса \lstinline{Entity}. Используйте паттерн Attorney\,-\,Client для ограничения доступа классов \lstinline{Tester_v1} и \lstinline{Tester_v2} к приватной секции класса \lstinline{Entity}.
+Реализуйте систему внешнего тестирования приватных функций-членов некоторого класса. Реализуйте класс \lstinline{Entity}. Реализуйте в классе \lstinline{Entity} приватные функции-члены \lstinline{test_v1} и \lstinline{test_v2}, которые необходимо протестировать. Вспомните о первом принципе SOLID. Реализуйте классы \lstinline{Tester_v1} и \lstinline{Tester_v2} для представления тестов функций-членов \lstinline{test_v1} и \lstinline{test_v2} класса \lstinline{Entity} соответственно. Используйте паттерн Attorney\,-\,Client для ограничения доступа классов \lstinline{Tester_v1} и \lstinline{Tester_v2} к приватной секции класса \lstinline{Entity}.
 
 \bigskip
 
@@ -489,7 +487,9 @@
 
 \bigskip
 
-Доработайте пример \href{https://github.com/i-s-m-mipt/Education/blob/master/projects/examples/source/04.24.cpp}{\texttt{04.24}} таким образом, чтобы пользователь мог проверять наличие некоторого заданного типа в очереди. Реализуйте базовый шаблон структуры \lstinline{Has}, а также две частичные специализации для пустой и непустой очередей соответственно по аналогии с шаблоном класса \lstinline{Max_Type}. Используйте стандартный шаб- 
+Доработайте пример \href{https://github.com/i-s-m-mipt/Education/blob/master/projects/examples/source/04.24.cpp}{\texttt{04.24}} таким образом, чтобы пользователь мог проверять наличие некоторого типа в очереди типов. Реализуйте базовый шаблон структуры \lstinline{Has}, а также частичные специализации~для~пустой~и~не-
+
+пустой очередей типов соответственно по аналогии с шаблоном класса \lstinline{Find}. Используйте стандартный шаб- 
 
 лон свойств \lstinline{std::is_same} для сравнения типов. Реализуйте шаблон константы для сокращения записей обра- 
 
@@ -591,7 +591,7 @@ Method, для управления поведением игровых объе
 
 \bigskip
 
-Выполните автоматизированную сборку всех примеров из репозитория \href{https://github.com/i-s-m-mipt/Education/tree/master}{Education}. Установите глобально библиотеки \href{https://www.boost.org/}{Boost} версии 1.90, выполнив команды из второго закомментированного блока скрипта \href{https://github.com/i-s-m-mipt/Education/blob/master/education.sh}{education.sh}. Установите систему автоматизации сборки \href{https://cmake.org/}{CMake} версии 3.28 или новее, выполнив команду sudo apt install cmake. Установите глобально дополнительные необходимые библиотеки, указанные в командах \lstinline{find_package} в файле \href{https://github.com/i-s-m-mipt/Education/blob/master/projects/examples/CMakeLists.txt}{CMakeLists.txt} проекта examples из репозитория Education. Используйте любые удобные открытые источники и документации библиотек на \href{https://github.com/}{GitHub} в качестве подкрепления. Обратите внимание, что большинство библиотек собираются и устанавливаются вручную из склонированных локально репозиториев, однако некоторые могут быть установлены через пакетные менеджеры. Например, библиотека \href{https://github.com/uxlfoundation/oneTBB}{TBB} устанавливается командой sudo apt install libtbb-dev. Выполните сборку только тех примеров из репозитория Education, которые используют стандартную библиотеку, Boost, TBB, \href{https://github.com/google/googletest}{Google.Test} или \href{https://github.com/google/benchmark}{Google.Benchmark}. Закомментируйте инструкции сборки остальных примеров в файле CMakeLists.txt проекта examples из репозитория Education. Выполните скрипт education.sh. Приложите в качестве результатов скриншоты терминалов, показывающих содержимое директории libraries и трех директорий output после завершения процесса сборки всех примеров.
+Выполните автоматизированную сборку всех примеров из репозитория \href{https://github.com/i-s-m-mipt/Education/tree/master}{Education}. Установите глобально библиотеки \href{https://www.boost.org/}{Boost} версии 1.95, выполнив команды из второго закомментированного блока скрипта \href{https://github.com/i-s-m-mipt/Education/blob/master/education.sh}{education.sh}. Установите систему автоматизации сборки \href{https://cmake.org/}{CMake} версии 3.28 или новее, выполнив команду sudo apt install cmake. Установите глобально дополнительные необходимые библиотеки, указанные в командах \lstinline{find_package} в файле \href{https://github.com/i-s-m-mipt/Education/blob/master/projects/examples/CMakeLists.txt}{CMakeLists.txt} проекта examples из репозитория Education. Используйте любые удобные открытые источники и документации библиотек на \href{https://github.com/}{GitHub} в качестве подкрепления. Обратите внимание, что большинство библиотек собираются и устанавливаются вручную из склонированных локально репозиториев, однако некоторые могут быть установлены через пакетные менеджеры. Например, библиотека \href{https://github.com/uxlfoundation/oneTBB}{TBB} устанавливается командой sudo apt install libtbb-dev. Выполните сборку только тех примеров из репозитория Education, которые используют стандартную библиотеку, Boost, TBB, \href{https://github.com/google/googletest}{Google.Test} или \href{https://github.com/google/benchmark}{Google.Benchmark}. Закомментируйте инструкции сборки остальных примеров в файле CMakeLists.txt проекта examples из репозитория Education. Выполните скрипт education.sh. Приложите в качестве результатов скриншоты терминалов, показывающих содержимое директории libraries и трех директорий output после завершения процесса сборки всех примеров.
 
 \bigskip
 
